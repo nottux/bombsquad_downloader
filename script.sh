@@ -1,3 +1,4 @@
+#!/bin/sh
 c='eval '
 g="sed -n "
 e="echo "
