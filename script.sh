@@ -16,7 +16,7 @@ b="(grep -o '\"B.*.\"' builds | tr -d '\"') | "
 l=$($c"$b\wc -l")
 $e\choose file to download
 $e
-$c$b\cat
+$c$b\cat | nl | tr '	' ")"
 $e
 $e\example: $t\1 for $($c"$b$g\1p")
 $e$t\10 for $($c"$b$g\10p")
