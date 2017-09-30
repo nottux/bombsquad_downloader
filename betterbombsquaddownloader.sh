@@ -2,7 +2,7 @@ e=echo
 w="http://www.files.froemling.net/bombsquad/builds"
 $e downloading website
 a=$(wget -O - $w | grep -o '\"B.*.\"' | tr -d '\"' | tr \\n '\"')
-l=$(echo $a | tr '\"' \\n | wc -l)
+l=$($e $a | tr '\"' \\n | wc -l)
 $e download complete
 $e
 $e $a | tr '\"' \\n | nl | tr '	' ")"
@@ -15,6 +15,6 @@ if [ "$d" = here ]
 then d=$(pwd)
 fi
 if [ "$c" -lt $l ]
-then wget $w/$(echo $a | tr '\"' \\n | sed -n $c\p) -P "$d"
+then wget $w/$($e $a | tr '\"' \\n | sed -n $c\p) -P "$d"
 else $e wrong entry
 fi
