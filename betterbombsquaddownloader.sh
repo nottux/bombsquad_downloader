@@ -1,7 +1,7 @@
 e=echo
 w="http://www.files.froemling.net/bombsquad/builds"
 $e downloading website
-a=$(wget -O - -o /dev/null $w | grep -o '\"B.*.\"' | tr -d '\"' | tr \\n '\"')
+a=$(wget -O - $w | grep -o '\"B.*.\"' | tr -d '\"' | tr \\n '\"')
 l=$(echo $a | tr '\"' \\n | wc -l)
 $e download complete
 $e
