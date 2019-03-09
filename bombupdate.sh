@@ -1,4 +1,4 @@
-#/bin/sh
+#/bin/bash
 echo started
 cd /home/utku/Programlar/Bombsquad/
 w=http://www.files.froemling.net/bombsquad/builds
