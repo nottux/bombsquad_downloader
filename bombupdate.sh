@@ -1,13 +1,13 @@
 #/bin/bash
 echo started
 cd /home/utku/Programlar/Bombsquad/
-w=http://www.files.froemling.net/bombsquad/builds
-a=$(wget -O - $w |grep -o \"BombSquad_Linux_64bit.*.\" |tr -d \" |rev |cut -c 8- |rev)
+w="https://files.ballistica.net/bombsquad/builds"
+a=$(wget -O - $w |grep -o \>BombSquad_Linux_64bit.*.\</a\>|cut -d\< -f1|cut -c2-)
 l=$(ls)
 if [ $l = $a ]
 then echo up-to-date
 else echo downloading
-wget -O - $w/$a.tar.gz |tar -xz
+wget -O - $(echo $w/$a|tr -d ' ')|tar -xz
 if [ $? = 0 ]
 then rm -r $l
 chmod -R 777 $a
